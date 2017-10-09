@@ -67,7 +67,7 @@ $drawing.addEventListener('mousemove', function(e) {
    * @return {number} The local X value of the mouse.
    */
   function getX(e) {
-    return e.offsetX ? e.offsetX : e.layerX;
+    return e.pageX - e.target.getBoundingClientRect().left;
   }
 
   /**
@@ -76,7 +76,7 @@ $drawing.addEventListener('mousemove', function(e) {
    * @return {number} The local Y value of the mouse.
    */
   function getY(e) {
-    return e.offsetY ? e.offsetY : e.layerY;
+    return e.pageY - e.target.getBoundingClientRect().top;
   }
 });
 
